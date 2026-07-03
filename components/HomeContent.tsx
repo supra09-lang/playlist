@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { Music } from "lucide-react";
+import Link from "next/link";
+import { Music, Info } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import SongCarousel from "@/components/SongCarousel";
 import PaletteButton from "@/components/PaletteButton";
@@ -74,23 +75,22 @@ export default function HomeContent({ songs }: HomeContentProps) {
 
   return (
     <div className="min-h-full pb-20">
-      {/* Hero section */}
-      <div className="max-w-2xl mx-auto px-4 pt-36 pb-20 flex flex-col items-center">
-        {/* Header row */}
-        <div className="w-full flex items-center justify-between mb-8 fixed top-0 left-0 right-0 px-4 pt-4 pb-2 z-50">
+      {/* Header */}
+      <div className="px-4 pt-4 pb-2">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className={`w-8 h-8 rounded-full ${palette.accentBg} flex items-center justify-center`}>
               <Music className="w-4 h-4 text-white" />
             </div>
             <span className="text-lg font-bold text-gray-800">Ibhaan&apos;s playlist</span>
           </div>
-          <PaletteButton />
+          <a href="/about" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Why I created this page?</a>
         </div>
+      </div>
 
-        {/* Large centered search */}
-        <div className="w-full sticky top-14 z-40">
-          <SearchBar value={query} onChange={setQuery} />
-        </div>
+      {/* Search section */}
+      <div className="max-w-2xl mx-auto px-4 pt-20 pb-16">
+        <SearchBar value={query} onChange={setQuery} />
       </div>
 
       {/* Filter tabs */}
@@ -98,7 +98,7 @@ export default function HomeContent({ songs }: HomeContentProps) {
         <div className="max-w-2xl mx-auto px-4 mb-4">
           <div className="flex gap-2">
             <button
-              onClick={() => setActiveTab("recent")}
+              onClick={() => handleTabChange("recent")}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeTab === "recent"
                   ? `${palette.accentBg} text-white`
@@ -108,7 +108,7 @@ export default function HomeContent({ songs }: HomeContentProps) {
               Recently Played
             </button>
             <button
-              onClick={() => setActiveTab("new")}
+              onClick={() => handleTabChange("new")}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeTab === "new"
                   ? `${palette.accentBg} text-white`
@@ -118,7 +118,7 @@ export default function HomeContent({ songs }: HomeContentProps) {
               New Songs
             </button>
             <button
-              onClick={() => setActiveTab("all")}
+              onClick={() => handleTabChange("all")}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeTab === "all"
                   ? `${palette.accentBg} text-white`
@@ -132,7 +132,7 @@ export default function HomeContent({ songs }: HomeContentProps) {
       )}
 
       {/* Carousel */}
-      <div className="max-w-2xl mx-auto px-4">
+      <div className={`max-w-2xl mx-auto px-4 transition-opacity duration-700 ${isLoading ? "opacity-0" : "opacity-100"}`}>
         <SongCarousel
           songs={displaySongs}
           playCounts={playCounts}

@@ -3,10 +3,9 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import MusicPlayer from "@/components/MusicPlayer";
 import CaptureButton from "@/components/CaptureButton";
-import PaletteButton from "@/components/PaletteButton";
 import { useTheme } from "@/lib/ThemeContext";
 import type { Song } from "@/lib/songs";
 
@@ -56,13 +55,19 @@ export default function PlayerContent({ songs }: PlayerContentProps) {
       {/* Header */}
       <header className="flex items-center justify-between px-4 pt-6 pb-4">
         <button
-          onClick={() => router.push("/")}
+          onClick={() => router.back()}
           className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors"
-          aria-label="Go to home"
+          aria-label="Go back"
         >
           <ArrowLeft className="w-6 h-6 text-gray-700" />
         </button>
-        <PaletteButton />
+        <button
+          onClick={() => router.push("/")}
+          className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors"
+          aria-label="Close"
+        >
+          <X className="w-6 h-6 text-gray-700" />
+        </button>
       </header>
 
       {/* Illustration */}

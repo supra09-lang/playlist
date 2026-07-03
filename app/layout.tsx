@@ -30,6 +30,9 @@ export default function RootLayout({
       <body className="min-h-full font-[family-name:var(--font-geist)] antialiased">
         <ThemeWrapper>
           {children}
+          <footer className="text-center text-xs text-black-400 py-6">
+            Website built by mommy ❤️ June 2026 
+          </footer>
         </ThemeWrapper>
       </body>
     </html>

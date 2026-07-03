@@ -17,10 +17,7 @@ export default function SongCarousel({ songs, playCounts, onPlay }: SongCarousel
   }
 
   return (
-    <div
-      className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 scrollbar-hide"
-      style={{ WebkitOverflowScrolling: "touch" }}
-    >
+    <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
       {songs.map((song) => (
         <SongCard
           key={song.id}
@@ -29,7 +26,6 @@ export default function SongCarousel({ songs, playCounts, onPlay }: SongCarousel
           onPlay={onPlay}
         />
       ))}
-      {/* Spacer so last card doesn't hug the edge */}
       <div className="flex-shrink-0 w-4" aria-hidden="true" />
     </div>
   );
