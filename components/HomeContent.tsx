@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Music, Info } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import SongCarousel from "@/components/SongCarousel";
+import SongListItem from "@/components/SongListItem";
 import PaletteButton from "@/components/PaletteButton";
 import { useTheme } from "@/lib/ThemeContext";
 import { getPlayCounts, incrementPlayCount, getRecentlyPlayedIds } from "@/lib/storage";
@@ -29,6 +30,20 @@ export default function HomeContent({ songs }: HomeContentProps) {
   useEffect(() => {
     setPlayCounts(getPlayCounts());
     setRecentIds(getRecentlyPlayedIds());
+  }, []);
+
+  // Refresh counts when returning to this page
+  useEffect(() => {
+    const handleFocus = () => {
+      setPlayCounts(getPlayCounts());
+      setRecentIds(getRecentlyPlayedIds());
+    };
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("pageshow", handleFocus);
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      window.removeEventListener("pageshow", handleFocus);
+    };
   }, []);
 
   const handleTabChange = (tab: FilterTab) => {
@@ -131,13 +146,26 @@ export default function HomeContent({ songs }: HomeContentProps) {
         </div>
       )}
 
-      {/* Carousel */}
+      {/* Songs display */}
       <div className={`max-w-2xl mx-auto px-4 transition-opacity duration-700 ${isLoading ? "opacity-0" : "opacity-100"}`}>
-        <SongCarousel
-          songs={displaySongs}
-          playCounts={playCounts}
-          onPlay={handlePlay}
-        />
+        {activeTab === "all" && !query ? (
+          <div className="flex flex-col gap-2">
+            {displaySongs.map((song) => (
+              <SongListItem
+                key={song.id}
+                song={song}
+                playCount={playCounts[song.id] || song.playCount}
+                onPlay={handlePlay}
+              />
+            ))}
+          </div>
+        ) : (
+          <SongCarousel
+            songs={displaySongs}
+            playCounts={playCounts}
+            onPlay={handlePlay}
+          />
+        )}
       </div>
 
       {/* Empty state for search */}
