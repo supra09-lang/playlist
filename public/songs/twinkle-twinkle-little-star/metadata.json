@@ -1,0 +1,19 @@
+{
+  "id": "star",
+  "title": "Twinkle Twinkle Little Star",
+  "slug": "star",
+  "category": "Learning",
+  "ageRange": "1-4",
+  "duration": 60,
+  "language": "English",
+  "themeColor": "#E91E63",
+  "image": "artwork.png",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["star", "little", "twinkle", "five"],
+  "favorite": true,
+  "playCount": 0,
+  "credit": "Audio from Tunepocket"
+
+}

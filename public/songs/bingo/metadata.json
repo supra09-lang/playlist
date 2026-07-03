@@ -1,0 +1,17 @@
+{
+  "id": "bingo",
+  "title": "Bingo",
+  "slug": "bingo",
+  "category": "Animals",
+  "ageRange": "1-4",
+  "duration": 75,
+  "language": "English",
+  "themeColor": "#8D6E63",
+  "image": "artwork.svg",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["dog", "animals", "farm", "nursery rhyme"],
+  "favorite": false,
+  "playCount": 8
+}

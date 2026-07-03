@@ -1,0 +1,17 @@
+{
+  "id": "wheels-on-the-bus",
+  "title": "Wheels on the Bus",
+  "slug": "wheels-on-the-bus",
+  "category": "Transport",
+  "ageRange": "1-4",
+  "duration": 90,
+  "language": "English",
+  "themeColor": "#F9A825",
+  "image": "artwork.svg",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["bus", "transport", "wheels", "nursery rhyme"],
+  "favorite": false,
+  "playCount": 5
+}

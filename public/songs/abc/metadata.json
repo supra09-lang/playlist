@@ -1,0 +1,17 @@
+{
+  "id": "abc",
+  "title": "ABC Song",
+  "slug": "abc",
+  "category": "Learning",
+  "ageRange": "1-4",
+  "duration": 60,
+  "language": "English",
+  "themeColor": "#E91E63",
+  "image": "artwork.png",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["alphabet", "learning", "letters", "nursery rhyme"],
+  "favorite": true,
+  "playCount": 12
+}

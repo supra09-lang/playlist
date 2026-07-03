@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9"/>
+      <stop offset="100%" style="stop-color:#C8E6C9"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="60%">
+      <stop offset="0%" style="stop-color:#E3F2FD"/>
+      <stop offset="100%" style="stop-color:#E8F5E9"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky and meadow background -->
+  <rect width="400" height="400" fill="url(#sky)" rx="20"/>
+  <!-- Rolling hills -->
+  <ellipse cx="200" cy="380" rx="250" ry="100" fill="#A5D6A7"/>
+  <ellipse cx="100" cy="390" rx="150" ry="80" fill="#81C784" opacity="0.7"/>
+  <ellipse cx="320" cy="385" rx="130" ry="70" fill="#66BB6A" opacity="0.5"/>
+  <!-- Small flowers -->
+  <circle cx="80" cy="340" r="4" fill="#F48FB1"/>
+  <circle cx="120" cy="355" r="3" fill="#FFD54F"/>
+  <circle cx="300" cy="345" r="4" fill="#CE93D8"/>
+  <circle cx="330" cy="360" r="3" fill="#F48FB1"/>
+  <circle cx="250" cy="350" r="3" fill="#FFD54F"/>
+  <!-- Sheep body (fluffy wool) -->
+  <ellipse cx="200" cy="255" rx="75" ry="55" fill="#FAFAFA"/>
+  <!-- Wool texture bumps -->
+  <circle cx="160" cy="230" r="18" fill="#F5F5F5"/>
+  <circle cx="190" cy="218" r="20" fill="#FAFAFA"/>
+  <circle cx="220" cy="222" r="18" fill="#F5F5F5"/>
+  <circle cx="245" cy="235" r="16" fill="#FAFAFA"/>
+  <circle cx="155" cy="255" r="16" fill="#F5F5F5"/>
+  <circle cx="245" cy="258" r="15" fill="#F5F5F5"/>
+  <circle cx="175" cy="275" r="14" fill="#FAFAFA"/>
+  <circle cx="220" cy="278" r="14" fill="#F5F5F5"/>
+  <!-- Sheep head (black) -->
+  <ellipse cx="200" cy="185" rx="32" ry="35" fill="#37474F"/>
+  <!-- Ears -->
+  <ellipse cx="172" cy="170" rx="12" ry="18" fill="#263238" transform="rotate(-15 172 170)"/>
+  <ellipse cx="228" cy="170" rx="12" ry="18" fill="#263238" transform="rotate(15 228 170)"/>
+  <!-- Inner ears -->
+  <ellipse cx="172" cy="172" rx="7" ry="11" fill="#E91E63" opacity="0.3" transform="rotate(-15 172 172)"/>
+  <ellipse cx="228" cy="172" rx="7" ry="11" fill="#E91E63" opacity="0.3" transform="rotate(15 228 172)"/>
+  <!-- Eyes -->
+  <circle cx="188" cy="185" r="7" fill="#1A1A1A"/>
+  <circle cx="212" cy="185" r="7" fill="#1A1A1A"/>
+  <!-- Eye shine -->
+  <circle cx="190" cy="183" r="3" fill="white"/>
+  <circle cx="214" cy="183" r="3" fill="white"/>
+  <!-- Nose/mouth -->
+  <ellipse cx="200" cy="200" rx="6" ry="4" fill="#1A1A1A"/>
+  <!-- Cute smile -->
+  <path d="M 193 206 Q 200 212 207 206" stroke="#1A1A1A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Legs -->
+  <rect x="172" y="295" width="12" height="35" fill="#37474F" rx="6"/>
+  <rect x="192" y="295" width="12" height="35" fill="#37474F" rx="6"/>
+  <rect x="212" y="295" width="12" height="35" fill="#37474F" rx="6"/>
+  <!-- Hooves -->
+  <rect x="170" y="325" width="16" height="8" fill="#1A1A1A" rx="4"/>
+  <rect x="190" y="325" width="16" height="8" fill="#1A1A1A" rx="4"/>
+  <rect x="210" y="325" width="16" height="8" fill="#1A1A1A" rx="4"/>
+  <!-- Three wool bags -->
+  <rect x="50" cy="300" y="290" width="35" height="40" fill="#8D6E63" rx="5"/>
+  <rect x="55" y="285" width="25" height="8" fill="#6D4C41" rx="3"/>
+  <circle cx="67" cy="307" r="8" fill="#FAFAFA" opacity="0.6"/>
+  <rect x="315" y="290" width="35" height="40" fill="#8D6E63" rx="5"/>
+  <rect x="320" y="285" width="25" height="8" fill="#6D4C41" rx="3"/>
+  <circle cx="332" cy="307" r="8" fill="#FAFAFA" opacity="0.6"/>
+  <rect x="340" y="310" width="30" height="35" fill="#8D6E63" rx="5"/>
+  <rect x="345" y="305" width="20" height="8" fill="#6D4C41" rx="3"/>
+  <circle cx="355" cy="325" r="7" fill="#FAFAFA" opacity="0.6"/>
+  <!-- Subtle clouds -->
+  <ellipse cx="70" cy="60" rx="35" ry="16" fill="white" opacity="0.6"/>
+  <ellipse cx="95" cy="55" rx="25" ry="14" fill="white" opacity="0.6"/>
+  <ellipse cx="310" cy="45" rx="30" ry="14" fill="white" opacity="0.5"/>
+  <ellipse cx="335" cy="40" rx="22" ry="12" fill="white" opacity="0.5"/>
+  <!-- Music notes floating -->
+  <text x="55" y="130" font-size="22" opacity="0.4">♪</text>
+  <text x="330" y="120" font-size="20" opacity="0.4">♫</text>
+</svg>

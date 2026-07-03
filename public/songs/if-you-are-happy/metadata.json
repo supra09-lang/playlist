@@ -1,0 +1,19 @@
+{
+  "id": "happy",
+  "title": "If You're Happy",
+  "slug": "happy",
+  "category": "Learning",
+  "ageRange": "1-4",
+  "duration": 60,
+  "language": "English",
+  "themeColor": "#E91E63",
+  "image": "artwork.png",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["happy", "claps", "hurray"],
+  "favorite": true,
+  "playCount": 0,
+  "credit": "Audio from Tunepocket"
+
+}

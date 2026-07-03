@@ -1,0 +1,19 @@
+{
+  "id": "morning",
+  "title": "Morning Routine",
+  "slug": "morning",
+  "category": "Learning",
+  "ageRange": "1-4",
+  "duration": 60,
+  "language": "English",
+  "themeColor": "#E91E63",
+  "image": "artwork.png",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["brush", "morning", "wake up"],
+  "favorite": true,
+  "playCount": 0,
+  "credit": "Audio from Tunepocket"
+
+}

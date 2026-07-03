@@ -1,0 +1,19 @@
+{
+  "id": "ducks",
+  "title": "5 Little Ducks",
+  "slug": "ducks",
+  "category": "Learning",
+  "ageRange": "1-4",
+  "duration": 60,
+  "language": "English",
+  "themeColor": "#E91E63",
+  "image": "artwork.svg",
+  "thumbnail": "thumbnail.svg",
+  "audio": "audio.mp3",
+  "lyrics": "lyrics.md",
+  "tags": ["ducks", "little", "water", "five"],
+  "favorite": true,
+  "playCount": 0,
+  "credit": "Audio from Tunepocket"
+
+}
