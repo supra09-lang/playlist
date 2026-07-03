@@ -56,9 +56,9 @@ export default function PlayerContent({ songs }: PlayerContentProps) {
       {/* Header */}
       <header className="flex items-center justify-between px-4 pt-6 pb-4">
         <button
-          onClick={() => router.back()}
+          onClick={() => router.push("/")}
           className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors"
-          aria-label="Go back"
+          aria-label="Go to home"
         >
           <ArrowLeft className="w-6 h-6 text-gray-700" />
         </button>

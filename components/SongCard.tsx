@@ -30,9 +30,9 @@ export default function SongCard({ song, playCount, onPlay }: SongCardProps) {
           sizes="60vw"
         />
         {/* Slight dark overlay for contrast */}
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
         {/* Play button centered */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className={`w-20 h-20 flex items-center justify-center rounded-full ${palette.accentBg} text-white shadow-lg backdrop-blur-sm`}>
             <Play className="w-10 h-10 ml-0.5" fill="currentColor" />
           </div>

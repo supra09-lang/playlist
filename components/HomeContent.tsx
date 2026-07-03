@@ -10,7 +10,7 @@ import { useTheme } from "@/lib/ThemeContext";
 import { getPlayCounts, incrementPlayCount, getRecentlyPlayedIds } from "@/lib/storage";
 import type { Song } from "@/lib/songs";
 
-type FilterTab = "recent" | "new";
+type FilterTab = "recent" | "new" | "all";
 
 interface HomeContentProps {
   songs: Song[];
@@ -23,11 +23,18 @@ export default function HomeContent({ songs }: HomeContentProps) {
   const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
   const [recentIds, setRecentIds] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<FilterTab>("recent");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setPlayCounts(getPlayCounts());
     setRecentIds(getRecentlyPlayedIds());
   }, []);
+
+  const handleTabChange = (tab: FilterTab) => {
+    setIsLoading(true);
+    setActiveTab(tab);
+    setTimeout(() => setIsLoading(false), 900);
+  };
 
   const handlePlay = (song: Song) => {
     const newCount = incrementPlayCount(song.id);
@@ -50,7 +57,6 @@ export default function HomeContent({ songs }: HomeContentProps) {
     if (query) return searchFiltered;
 
     if (activeTab === "recent") {
-      // Recently played first, then unplayed
       const played = recentIds
         .map((id) => searchFiltered.find((s) => s.id === id))
         .filter(Boolean) as Song[];
@@ -58,7 +64,11 @@ export default function HomeContent({ songs }: HomeContentProps) {
       return [...played, ...unplayed];
     }
 
-    // "New" — alphabetical order (first to last)
+    if (activeTab === "new") {
+      return [...searchFiltered].slice(0, 3);
+    }
+
+    // "all"
     return [...searchFiltered];
   }, [searchFiltered, activeTab, recentIds, query]);
 
@@ -81,11 +91,6 @@ export default function HomeContent({ songs }: HomeContentProps) {
         <div className="w-full sticky top-14 z-40">
           <SearchBar value={query} onChange={setQuery} />
         </div>
-
-        {/* Song count */}
-        {/* <p className="text-sm text-gray-400 mt-3">
-          {songs.length} songs
-        </p> */}
       </div>
 
       {/* Filter tabs */}
@@ -111,6 +116,16 @@ export default function HomeContent({ songs }: HomeContentProps) {
               }`}
             >
               New Songs
+            </button>
+            <button
+              onClick={() => setActiveTab("all")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeTab === "all"
+                  ? `${palette.accentBg} text-white`
+                  : "bg-white/60 text-gray-600 hover:bg-white/80"
+              }`}
+            >
+              All Songs
             </button>
           </div>
         </div>
