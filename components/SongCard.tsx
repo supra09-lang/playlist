@@ -17,7 +17,7 @@ export default function SongCard({ song, playCount, onPlay }: SongCardProps) {
   return (
     <button
       onClick={() => onPlay(song)}
-      className="flex-shrink-0 w-[32vw] snap-start flex flex-col rounded-2xl overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-md transition-all active:scale-[0.97]"
+      className="flex-shrink-0 w-[70vw] md:w-[32vw] snap-start flex flex-col rounded-2xl overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-md transition-all active:scale-[0.97]"
       aria-label={`Play ${song.title}`}
     >
       {/* Artwork with play overlay */}
