@@ -9,7 +9,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Moments",
+  title: "TinyTunes",
   description: "A calm music experience for toddlers",
 };
 
