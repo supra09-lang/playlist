@@ -162,13 +162,13 @@ export default function MusicPlayer({
 
         <button
           onClick={togglePlay}
-          className={`w-16 h-16 flex items-center justify-center rounded-full ${palette.accentBg} ${palette.accentBgHover} text-white transition-colors active:scale-95`}
+          className={`w-[88px] h-[88px] flex items-center justify-center rounded-full ${palette.accentBg} ${palette.accentBgHover} text-white transition-colors active:scale-95`}
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
-            <Pause className="w-7 h-7" fill="currentColor" />
+            <Pause className="w-10 h-10" fill="currentColor" />
           ) : (
-            <Play className="w-7 h-7 ml-1" fill="currentColor" />
+            <Play className="w-10 h-10 ml-1" fill="currentColor" />
           )}
         </button>
 
